@@ -204,6 +204,116 @@
       <div class="body-wrap">
         
   
+    <article id="post-Some trouble recently" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <input type="hidden" class="isFancy" />
+    
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h1 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h1><hr>
+<h2 id="Git-push-failed"><a href="#Git-push-failed" class="headerlink" title="Git push failed"></a>Git push failed</h2><p>Enter your folder and execute this command</p>
+<pre><code>git remote set-url origin git@github.com:your_username/your_project.git
+</code></pre><h2 id="Anyway-to-change-UI-tab-tree-view-font-size"><a href="#Anyway-to-change-UI-tab-tree-view-font-size" class="headerlink" title="Anyway to change UI/tab/tree view font size?"></a>Anyway to change UI/tab/tree view font size?</h2><p>I found an wonderful answer by Google<br><a href="https://github.com/atom/atom/issues/11905#issuecomment-224865625" target="_blank" rel="external">https://github.com/atom/atom/issues/11905#issuecomment-224865625</a><br><img src="http://p1.bpimg.com/567571/3453b41c7ece05d1.gif" alt=""><br>You can do it by editing two files:</p>
+<pre><code># init.coffee
+UIFontSize = 12
+atom.commands.add &apos;atom-workspace&apos;,
+  &apos;ui:increase-font-size&apos;: -&gt;
+    UIFontSize += 1
+    document.documentElement.style.fontSize = UIFontSize + &apos;px&apos;
+  &apos;ui:decrease-font-size&apos;: -&gt;
+    UIFontSize -= 1
+    document.documentElement.style.fontSize = UIFontSize + &apos;px&apos;
+
+
+# keymap.cson
+&apos;atom-workspace&apos;:
+  &apos;ctrl-+&apos;: &apos;ui:increase-font-size&apos;
+  &apos;ctrl--&apos;: &apos;ui:decrease-font-size&apos;
+</code></pre><h2 id="How-to-compile-and-run-a-c-file-like-and-IDE"><a href="#How-to-compile-and-run-a-c-file-like-and-IDE" class="headerlink" title="How to compile and run a c++ file like and IDE?"></a>How to compile and run a c++ file like and IDE?</h2><p>  I found this way to solve it;</p>
+<ol>
+<li><p>You should install a package</p>
+<p><a href="https://atom.io/packages/atom-shell-commands" target="_blank" rel="external">https://atom.io/packages/atom-shell-commands</a></p>
+<p>By this command to install</p>
+<p> apm install atom-shell-commands<br>Be sure you had already installed <a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a></p>
+</li>
+<li><p>Edit  config file (File-&gt;Open Your Config, or ~/.atom/config.cson)</p>
+<pre><code>&quot;atom-shell-commands&quot;:
+commands: [
+  {
+    name: &quot;compile&quot;
+    command: &quot;g++&quot;
+    arguments: [
+      &quot;{FileName}&quot;
+      &quot;-o&quot;
+      &quot;{FileNameNoExt}.exe&quot;
+    ]
+    options:
+      cwd: &quot;{FileDir}&quot;
+      keymap: &quot;ctrl-2&quot;
+      save: true
+  }
+  {
+    name: &quot;run&quot;
+    command: &quot;cmd&quot;
+    arguments: [
+      &quot;/C&quot;
+      &quot;start&quot;
+      &quot;C:/Users/Administrator/.atom/launch.cmd&quot;
+      &quot;{FileNameNoExt}&quot;
+    ]
+    options:
+      cwd: &quot;{FileDir}&quot;
+      keymap: &quot;ctrl-1&quot;
+      save: true
+  }
+]
+</code></pre></li>
+</ol>
+<p>Be sure that you had already added g++ to Path</p>
+<p>you can control the shortcuts by modifying keymap</p>
+<p>launch.cmd:</p>
+<pre><code>@echo off
+%1
+echo.
+pause
+exit
+</code></pre><p><img src="http://i1.piimg.com/567571/7f1dc5968cd4cff2.jpg" alt=""><br><a href="https://atom.io/packages/atom-shell-commands" target="_blank" rel="external">More information</a></p>
+<h1 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h1><hr>
+<h2 id="error-deployer-not-found-github"><a href="#error-deployer-not-found-github" class="headerlink" title="error deployer not found:github"></a>error deployer not found:github</h2><pre><code>npm install hexo-deployer-git --save
+</code></pre><h2 id="can’t-open-localhost-4000"><a href="#can’t-open-localhost-4000" class="headerlink" title="can’t open localhost:4000"></a>can’t open localhost:4000</h2><pre><code>uninstall 福昕阅读器 or hexo s -p 5000
+</code></pre><h1 id="GitHub"><a href="#GitHub" class="headerlink" title="GitHub"></a>GitHub</h1><hr>
+<h2 id="github-for-windows-login-failed"><a href="#github-for-windows-login-failed" class="headerlink" title="github for windows login failed"></a>github for windows login failed</h2><pre><code>git config --global user.email yourmail
+git config --global user.name yourname
+</code></pre><h2 id="install"><a href="#install" class="headerlink" title="install"></a>install</h2><p>add an hosts record</p>
+<pre><code>54.231.98.184 github-com.s3.amazonaws.com
+</code></pre>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      <a href="/2016/12/25/Some trouble recently/" class="archive-article-date">
+  	<time datetime="2016-12-25T08:31:19.174Z" itemprop="datePublished"><i class="icon-clock"></i>2016-12-25</time>
+</a>
+      
+      
+
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+
+
+
+
+
+
+
+
+
+  
     <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-inner">
     
@@ -224,7 +334,11 @@
       
         <h1 id="关于博客的建立"><a href="#关于博客的建立" class="headerlink" title="关于博客的建立"></a>关于博客的建立</h1><hr>
 <blockquote>
-<p>本博客基于Hexo 的 Nano和yilia 两款theme的二次开发，并独立开发了首页模块。<del>过几天我会放出项目</del>。<br>        git clone <a href="https://github.com/Bocity/Bocity.git" target="_blank" rel="external">https://github.com/Bocity/Bocity.git</a><br><br><br>另外本博客发表的内容为技术分析文和情感倾诉文,内容与政治立场无关。</p>
+<p>本博客基于Hexo 的 Nano和yilia 两款theme的二次开发.<del>过几天我会放出项目</del>。</p>
+</blockquote>
+<pre><code>git clone https://github.com/Bocity/Bocity.git
+</code></pre><blockquote>
+<p><br><br>另外本博客发表的内容为技术分析文和情感倾诉文,内容与政治立场无关。</p>
 </blockquote>
 <hr>
 <h1 id="Last"><a href="#Last" class="headerlink" title="Last"></a>Last</h1><hr>

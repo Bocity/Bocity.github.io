@@ -207,7 +207,9 @@
         <h1 id="Atom"><a href="#Atom" class="headerlink" title="Atom"></a>Atom</h1><hr>
 <h2 id="Git-push-failed"><a href="#Git-push-failed" class="headerlink" title="Git push failed"></a>Git push failed</h2><p>Enter your folder and execute this command</p>
 <pre><code>git remote set-url origin git@github.com:your_username/your_project.git
-</code></pre><h2 id="Anyway-to-change-UI-tab-tree-view-font-size"><a href="#Anyway-to-change-UI-tab-tree-view-font-size" class="headerlink" title="Anyway to change UI/tab/tree view font size?"></a>Anyway to change UI/tab/tree view font size?</h2><p>I found a wonderful answer by Google<br><a href="https://github.com/atom/atom/issues/11905#issuecomment-224865625" target="_blank" rel="external">https://github.com/atom/atom/issues/11905#issuecomment-224865625</a><br><img src="http://p1.bpimg.com/567571/3453b41c7ece05d1.gif" alt=""><br>You can do it by editing two files:</p>
+</code></pre><h2 id="Anyway-to-change-UI-tab-tree-view-font-size"><a href="#Anyway-to-change-UI-tab-tree-view-font-size" class="headerlink" title="Anyway to change UI/tab/tree view font size?"></a>Anyway to change UI/tab/tree view font size?</h2><p>I found a wonderful answer by Google</p>
+<p><a href="https://github.com/atom/atom/issues/11905#issuecomment-224865625" target="_blank" rel="external">https://github.com/atom/atom/issues/11905#issuecomment-224865625</a><br><img src="http://p1.bpimg.com/567571/3453b41c7ece05d1.gif" alt=""></p>
+<p>You can do it by editing two files:</p>
 <pre><code># init.coffee
 UIFontSize = 12
 atom.commands.add &apos;atom-workspace&apos;,
@@ -230,34 +232,39 @@ atom.commands.add &apos;atom-workspace&apos;,
 <p>By this command to install</p>
 <p> apm install atom-shell-commands<br>Be sure you had already installed <a href="https://nodejs.org/en/" target="_blank" rel="external">Nodejs</a></p>
 </li>
-<li><p>Edit  config file (File-&gt;Open Your Config, or ~/.atom/config.cson)<br> “atom-shell-commands”:<br> commands: [<br>   {</p>
-<pre><code>name: &quot;compile&quot;
-command: &quot;g++&quot;
-arguments: [
-  &quot;{FileName}&quot;
-  &quot;-o&quot;
-  &quot;{FileNameNoExt}.exe&quot;
-]
-options:
-  cwd: &quot;{FileDir}&quot;
-  keymap: &quot;ctrl-2&quot;
-  save: true
-}
-{
-name: &quot;run&quot;
-command: &quot;cmd&quot;
-arguments: [
-  &quot;/C&quot;
-  &quot;start&quot;
-  &quot;C:/Users/Administrator/.atom/launch.cmd&quot;
-  &quot;{FileNameNoExt}&quot;
-]
-options:
-  cwd: &quot;{FileDir}&quot;
-  keymap: &quot;ctrl-1&quot;
-  save: true
-}
-]
+</ol>
+<ol>
+<li><p>Edit  config file (File-&gt;Open Your Config, or ~/.atom/config.cson)</p>
+<pre><code>&quot;atom-shell-commands&quot;:
+commands: [
+  {
+    name: &quot;compile&quot;
+    command: &quot;g++&quot;
+    arguments: [
+      &quot;{FileName}&quot;
+      &quot;-o&quot;
+      &quot;{FileNameNoExt}.exe&quot;
+    ]
+    options:
+      cwd: &quot;{FileDir}&quot;
+      keymap: &quot;ctrl-2&quot;
+      save: true
+    }
+    {
+    name: &quot;run&quot;
+    command: &quot;cmd&quot;
+    arguments: [
+      &quot;/C&quot;
+      &quot;start&quot;
+      &quot;C:/Users/Administrator/.atom/launch.cmd&quot;
+      &quot;{FileNameNoExt}&quot;
+    ]
+    options:
+      cwd: &quot;{FileDir}&quot;
+      keymap: &quot;ctrl-1&quot;
+      save: true
+    }
+    ]
 </code></pre></li>
 </ol>
 <p>Be sure that you had already added g++ to Path</p>

@@ -10,14 +10,39 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://haolovej.com">
-  <title>Archives | Bocity&#39;Blog</title>
+  <title>Someting_wrong_of_server | Bocity&#39;Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Bocity'Blog">
-<meta property="og:url" content="http://haolovej.com/archives/index.html">
+  <meta name="description" content="proc_open
+今天在部署服务器的时候，使用composer来安装依赖。遇到了
+
+　　The Process class relies on proc_open, which is not available on your PHP installation.
+
+开始的时候，我有些不知所措，于是冷静下来思考一番，然后goolge了一下
+
+解决方法：　　 在php.ini中，找到disable">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Someting_wrong_of_server">
+<meta property="og:url" content="http://haolovej.com/2017/03/04/someting_wrong_of_server/index.html">
 <meta property="og:site_name" content="Bocity'Blog">
+<meta property="og:description" content="proc_open
+今天在部署服务器的时候，使用composer来安装依赖。遇到了
+
+　　The Process class relies on proc_open, which is not available on your PHP installation.
+
+开始的时候，我有些不知所措，于是冷静下来思考一番，然后goolge了一下
+
+解决方法：　　 在php.ini中，找到disable">
+<meta property="og:updated_time" content="2017-03-04T15:34:57.477Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Bocity'Blog">
+<meta name="twitter:title" content="Someting_wrong_of_server">
+<meta name="twitter:description" content="proc_open
+今天在部署服务器的时候，使用composer来安装依赖。遇到了
+
+　　The Process class relies on proc_open, which is not available on your PHP installation.
+
+开始的时候，我有些不知所措，于是冷静下来思考一番，然后goolge了一下
+
+解决方法：　　 在php.ini中，找到disable">
   
     <link rel="alternative" href="/atom.xml" title="Bocity&#39;Blog" type="application/atom+xml">
   
@@ -150,113 +175,173 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-someting_wrong_of_server" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      Someting_wrong_of_server
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2017/03/04/someting_wrong_of_server/" class="archive-article-date">
+
+        <a href="/2017/03/04/someting_wrong_of_server/" class="archive-article-date">
   	<time datetime="2017-03-04T14:17:57.361Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-03-04</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/03/04/someting_wrong_of_server/">Someting_wrong_of_server</a>
-    </h1>
-  
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<h2 id="proc-open"><a href="#proc-open" class="headerlink" title="proc_open"></a>proc_open</h2><blockquote>
+<p>今天在部署服务器的时候，使用composer来安装依赖。遇到了</p>
+</blockquote>
+<pre><code>　　The Process class relies on proc_open, which is not available on your PHP installation.
+</code></pre><blockquote>
+<p>开始的时候，我有些不知所措，于是冷静下来思考一番，然后goolge了一下</p>
+</blockquote>
+<h3 id="解决方法："><a href="#解决方法：" class="headerlink" title="解决方法："></a>解决方法：</h3><p>　　<strong> 在php.ini中，找到disable_functions选项，看看后面是否有proc_open函数被禁用了，如果有的话，去掉即可 </strong><br><a id="more"></a><br><br></p>
+<blockquote>
+<p>  其实如果php的文档熟悉的话，应该马上就能知道proc_open实际上是一个函数，是php用来和shell交互的函数，一般这种可以直接作用于操作系统的函数是非常不安全的，对于这种不安全的函数，总是要做一些措施来进行保护</p>
+</blockquote>
+<hr>
+<h2 id="composer安装fxp插件时候提示内存不足"><a href="#composer安装fxp插件时候提示内存不足" class="headerlink" title="composer安装fxp插件时候提示内存不足"></a>composer安装fxp插件时候提示内存不足</h2><p><del>OpenVZ架构是没法加这个</del></p>
+<h4 id="1-进入目录"><a href="#1-进入目录" class="headerlink" title="1.进入目录"></a>1.进入目录</h4><pre><code>cd /var/
+</code></pre><h4 id="2-获取要增加的SWAP文件块-这里以1GB为例"><a href="#2-获取要增加的SWAP文件块-这里以1GB为例" class="headerlink" title="2.获取要增加的SWAP文件块(这里以1GB为例)"></a>2.获取要增加的SWAP文件块(这里以1GB为例)</h4><pre><code>dd if=/dev/zero of=swapfile bs=1024 count=1038336
+</code></pre><h4 id="3-创建SWAP文件"><a href="#3-创建SWAP文件" class="headerlink" title="3.创建SWAP文件"></a>3.创建SWAP文件</h4><pre><code>/sbin/mkswap swapfile
+</code></pre><h4 id="4-激活SWAP文件"><a href="#4-激活SWAP文件" class="headerlink" title="4.激活SWAP文件"></a>4.激活SWAP文件</h4><pre><code>/sbin/swapon swapfile
+</code></pre><h4 id="5-查看SWAP信息是否正确"><a href="#5-查看SWAP信息是否正确" class="headerlink" title="5.查看SWAP信息是否正确"></a>5.查看SWAP信息是否正确</h4><pre><code>/sbin/swapon –s
+</code></pre><h4 id="6-添加到fstab文件中让系统引导时自动启动"><a href="#6-添加到fstab文件中让系统引导时自动启动" class="headerlink" title="6.添加到fstab文件中让系统引导时自动启动"></a>6.添加到fstab文件中让系统引导时自动启动</h4><pre><code>echo &quot;/var/swapfile swap swap defaults 0 0&quot; &gt;&gt;/etc/fstab
+</code></pre><hr>
+<h2 id="权限"><a href="#权限" class="headerlink" title="权限"></a>权限</h2><blockquote>
+<p>今天使用 Laravel 框架的过程中。。由于没有给正确的权限。。。导致出现各种错误。。<br>    chmod -R 7777 folder</p>
+</blockquote>
+<hr>
+<h2 id="不编译php情况下安装openssl扩展"><a href="#不编译php情况下安装openssl扩展" class="headerlink" title="不编译php情况下安装openssl扩展"></a>不编译php情况下安装openssl扩展</h2><pre><code>Whoops, looks like something went wrong.
+</code></pre><p>1.下载和使用的PHP相同版本的php源码包。<br>解压后找打ext下面的openssl 文件夹/etc/php/bin/phpize(phpize的路径根据各自安装有所不同<br>可以通过</p>
+<pre><code>whereis phpize
+</code></pre><p>来查看)</p>
+<p>（如果遇到Cannot find config.m4.<br>　　Make sure that you run /usr/local/bin/phpize in the top level source directory of the module,<br>到openssl目录里面</p>
+<pre><code>mv config.0m4   config.m4  
+</code></pre><p>再执行phpize）<br>2.执行</p>
+<pre><code>./configure --with-php-config=/usr/local/php/bin/php-config(php-config文件的路径)
+make
+make test
+make install
+</code></pre><p>要把openssl.so文件加入到php.ini中 extesion=openssl.so（如果没有设定extesion_dir，如extension_dir =/usr/local/php/lib/php/extensions/no-debug-non-zts-20131226/查看phpize执行后的生成的so文件的路径即可</p>
+<hr>
+<h2 id="laravel-No-supported-encrypter-found-The-cipher-and-or-key-length-are-invalid"><a href="#laravel-No-supported-encrypter-found-The-cipher-and-or-key-length-are-invalid" class="headerlink" title="laravel No supported encrypter found. The cipher and / or key length are invalid"></a>laravel No supported encrypter found. The cipher and / or key length are invalid</h2><p>Run</p>
+<pre><code>php artisan key:generate
+</code></pre><p>to generate a new key<br>Then add it to .env.example</p>
+<pre><code>cp .env.example .env
+</code></pre>
+      
 
-        <div class="article-info info-on-right">
-          
-          
-
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://haolovej.com/2017/03/04/someting_wrong_of_server/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-      
-        </div></section>
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2016" class="archive-year">2016</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/25/Some trouble recently/" class="archive-article-date">
-  	<time datetime="2016-12-25T08:31:19.174Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/25/Some trouble recently/">Some trouble recently</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2016/12/25/Some trouble recently/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Some trouble recently</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2016/12/25/hello-world/" class="archive-article-date">
-  	<time datetime="2016-12-25T07:37:05.167Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-12-25</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2016/12/25/hello-world/">Hello World</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
-    
+
+
+
 
 
           </div>
@@ -279,8 +364,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
